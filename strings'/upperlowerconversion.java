@@ -83,4 +83,57 @@ public class upperlowerconversion {
     }
 }
 
+----------------------------------------------------------
+    //way3
+    /*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package strings;
+import java.util.*;
+/**
+ *
+ * @author yash verma
+ */
+public class ques9 {
+    public static String convert(String str)
+    {
+        int len=str.length();
+        char ch[]=str.toCharArray();
+       
+       
+        for(int i=0;i<ch.length;i++)
+        {
+            if(ch[i]>='a'&&ch[i]<='z')
+            {
+               int n =ch[i];
+               n=n-32;
+              // ch[i]=(char)n;
+               ch[i]=(char)(ch[i]-'a'+'A');
+            }
+            else  if(ch[i] == ' ')
+            {
+                ch[i]=ch[i];
+            }
+           
+            
+           else {
+               int n =ch[i];
+               n=n+32;
+               ch[i]=(char)n;
+            }     
+        }     
+    String s=new String(ch);
+        return s;
+    }   
+     public static void main(String args[])
+    {
+        Scanner sc=new Scanner(System.in);
+        System.out.println("enter the string");
+        String str= sc.nextLine();
+        String s=convert(str);
+        System.out.print(s);
+    }
+}
 
